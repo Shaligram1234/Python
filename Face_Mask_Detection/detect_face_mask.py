@@ -49,7 +49,7 @@ while 1:
                     # person is not waring mask
                     cv2.putText(img, not_weared_mask, org, font, font_scale, not_weared_mask_font_color, thickness, cv2.LINE_AA)
                     #y = int(y - 0.15 * h)
-                    cv2.rectangle(img, (mx, my), (mx + mh, my + mw), (0, 0, 255), 3)
+                    #cv2.rectangle(img, (mx, my), (mx + mh, my + mw), (0, 0, 255), 3)
                 else:
                     cv2.putText(img, weared_mask, org, font, font_scale, weared_mask_font_color, thickness, cv2.LINE_AA)
 
