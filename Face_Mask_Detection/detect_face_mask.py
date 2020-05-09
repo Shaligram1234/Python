@@ -35,11 +35,6 @@ while 1:
         roi_color = img[y:y + h, x:x + w]
 
 
-        eyes = eye_cascade.detectMultiScale(roi_gray)
-        for (ex, ey, ew, eh) in eyes:
-            cv2.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (0, 255, 0), 2)
-
-
         # Detect lips counters
         mouth_rects = mouth_cascade.detectMultiScale(gray, 1.5, 5)
 
