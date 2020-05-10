@@ -50,7 +50,7 @@ while 1:
         cv2.putText(img, "No face found...", org, font, font_scale, weared_mask_font_color, thickness, cv2.LINE_AA)
     elif(len(faces) == 0 and len(faces_bw) == 1):
         # It has been observed that for white mask covering mouth, with gray image face prediction is not happening
-        cv2.putText(img, weared_mask + " 1", org, font, font_scale, weared_mask_font_color, thickness, cv2.LINE_AA)
+        cv2.putText(img, weared_mask, org, font, font_scale, weared_mask_font_color, thickness, cv2.LINE_AA)
     else:
         # Draw rectangle on gace
         for (x, y, w, h) in faces:
@@ -64,7 +64,7 @@ while 1:
 
             # Face detected but Lips not detected which means person is wearing mask
             if(len(mouth_rects) == 0):
-                cv2.putText(img, weared_mask + " 2", org, font, font_scale, weared_mask_font_color, thickness, cv2.LINE_AA)
+                cv2.putText(img, weared_mask, org, font, font_scale, weared_mask_font_color, thickness, cv2.LINE_AA)
             else:
                 for (mx, my, mw, mh) in mouth_rects:
 
@@ -75,8 +75,6 @@ while 1:
                         #y = int(y - 0.15 * h)
                         cv2.rectangle(img, (mx, my), (mx + mh, my + mw), (0, 0, 255), 3)
                         break
-                    #else:
-                        #cv2.putText(img, weared_mask, org, font, font_scale, weared_mask_font_color, thickness, cv2.LINE_AA)
 
     # Show frame with results
     cv2.imshow('img', img)
